@@ -8,6 +8,7 @@ import Ordenador from "./Ordenador";
 export default function Menu() {
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState<number| null>(null);
+  const [ordenador, setOrdenador] = useState("");
   return (
     <main>
       <nav className={styles.menu}>
@@ -21,7 +22,7 @@ export default function Menu() {
         <SearchEngine search = {search} setSearch={setSearch}/>
         <div className={styles.cardapio_filtros}>
           <Filters filter={filter} setFilter={setFilter}/>
-          <Ordenador />
+          <Ordenador ordenador={ordenador} setOrdenador={setOrdenador} />
         </div>
       </section>
     </main>
