@@ -7,7 +7,10 @@ export default function Itens(){
     return(
         <div className={styles.itens}>
             {menu.map(e=>(
-                <Item key={e.id}/>
+                <Item key={e.id}
+                {...e}
+                />
+                
             ))}
         </div>
     )
