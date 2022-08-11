@@ -24,7 +24,7 @@ export default function Menu() {
         <div className={styles.cardapio_filtros}>
           <Filters filter={filter} setFilter={setFilter} />
           <Ordenador ordenador={ordenador} setOrdenador={setOrdenador} />
-          <Itens />
+          <Itens search = {search} filter={filter} ordenador = {ordenador}/>
         </div>
       </section>
     </main>
