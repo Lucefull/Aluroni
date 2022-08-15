@@ -1,15 +1,15 @@
-import styles from "./Menu.module.scss";
-import { ReactComponent as Logo } from "../../assets/logo.svg";
-import SearchEngine from "./SearchEngine";
-import { useState } from "react";
-import Filters from "./Filters";
-import Ordenador from "./Ordenador";
-import Itens from "./Itens";
+import styles from './Menu.module.scss';
+import { ReactComponent as Logo } from '../../assets/logo.svg';
+import SearchEngine from './SearchEngine';
+import { useState } from 'react';
+import Filters from './Filters';
+import Ordenador from './Ordenador';
+import Itens from './Itens';
 
 export default function Menu() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [filter, setFilter] = useState<number | null>(null);
-  const [ordenador, setOrdenador] = useState("");
+  const [ordenador, setOrdenador] = useState('');
   return (
     <main>
       <nav className={styles.menu}>
@@ -21,11 +21,11 @@ export default function Menu() {
       <section className={styles.cardapio}>
         <h3 className={styles.cardapio__titulo}>Cardapio</h3>
         <SearchEngine search={search} setSearch={setSearch} />
-        <div className={styles.cardapio_filtros}>
+        <div className={styles.cardapio__filtros}>
           <Filters filter={filter} setFilter={setFilter} />
           <Ordenador ordenador={ordenador} setOrdenador={setOrdenador} />
-          <Itens search = {search} filter={filter} ordenador = {ordenador}/>
         </div>
+        <Itens search={search} filter={filter} ordenador={ordenador} />
       </section>
     </main>
   );

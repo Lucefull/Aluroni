@@ -1,7 +1,7 @@
-import logo from "../../../../assets/logo.svg";
-import styles from "./Item.module.scss";
-import menu from '../itens.json';
-import classNames from "classnames";
+import logo from '../../../../assets/logo.svg';
+import styles from './Item.module.scss';
+import menu from '../../../../data/cardapio.json';
+import classNames from 'classnames';
 
 type Props = typeof menu[0];
 
@@ -24,13 +24,13 @@ export default function Item(props:Props) {
           [styles.item__tipo]:true,
           [styles[`item__tipo__${category.label.toLowerCase()}`]]:true
         }) }>
-            {category.label}
+          {category.label}
         </div>
         <div className={styles.item__porcao}>
-            {size}
+          {size}
         </div>
         <div className={styles.item__qtdpessoas}>
-            Serve {serving} pessoa{serving===1?"":"s"}
+            Serve {serving} pessoa{serving===1?'':'s'}
         </div>
         <div className={styles.item__valor}>
            R$ {price.toFixed(2)}

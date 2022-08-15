@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import Item from "./item";
-import menu from "./itens.json";
-import styles from "./Itens.module.scss";
+import { useEffect, useState } from 'react';
+import Item from './item';
+import menu from '../../../data/cardapio.json';
+import styles from './Itens.module.scss';
 
 interface Props {
   search: string;
@@ -14,7 +14,7 @@ export default function Itens(props: Props) {
   const { search, filter, ordenador } = props;
 
   function testSearch(title: string) {
-    const regex = new RegExp(search, "i");
+    const regex = new RegExp(search, 'i');
     return regex.test(title);
   }
 
@@ -26,14 +26,14 @@ export default function Itens(props: Props) {
 
   function ordenar(newList : typeof menu){
     switch(ordenador){
-        case "porcao":
-            return newList.sort((a,b) => a.size>b.size?1:-1);
-        case "qtd_pessoas":
-            return newList.sort((a,b)=> a.serving > b.serving ?1:-1);
-        case "preco":
-            return newList.sort((a,b)=> a.price > b.price ?1:-1);
-        default:
-            return newList;
+    case 'porcao':
+      return newList.sort((a,b) => a.size>b.size?1:-1);
+    case 'qtd_pessoas':
+      return newList.sort((a,b)=> a.serving > b.serving ?1:-1);
+    case 'preco':
+      return newList.sort((a,b)=> a.price > b.price ?1:-1);
+    default:
+      return newList;
     }
     
     
@@ -44,7 +44,6 @@ export default function Itens(props: Props) {
       (e) => testSearch(e.title) && testFilter(e.category.id)
     );
     setList(ordenar( newList));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search, filter, ordenador]);
 
   return (
