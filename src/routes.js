@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import PaginaPadrao from './components/PaginaPadrao';
 import Inicio from './pages/Inicio';
 import Menu from './pages/Menu';
+import NotFound from './pages/NotFound';
 import Sobre from './pages/Sobre';
 
 export default function AppRouter() {
@@ -17,8 +18,9 @@ export default function AppRouter() {
             <Route path="cardapio" element={<Menu />} />
             <Route path="sobre" element={<Sobre />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </main>
   );
