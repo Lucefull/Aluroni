@@ -1,11 +1,10 @@
 import logo from '../../../../assets/logo.svg';
 import styles from './Item.module.scss';
-import menu from '../../../../data/cardapio.json';
 import classNames from 'classnames';
+import { Prato } from '../../../../types/Prato';
 
-type Props = typeof menu[0];
 
-export default function Item(props:Props) {
+export default function Item(props:Prato) {
   const { title, description, category, price, serving, size, photo } = props;
 
   return (
